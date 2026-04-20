@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-\"\"\"ZPI-WARPAI: Local CLI Agent for Warp UIX. Uses Ollama.\"\"\"
+"""ZPI-WARPAI: Local CLI Agent for Warp UIX. Uses Ollama."""
 
 import os
 import sys
@@ -39,7 +39,7 @@ def cli(model):
 @click.argument('prompt', nargs=-1)
 @click.pass_context
 def chat(ctx, prompt):
-    \"\"\"Interactive chat mode.\"\"\"
+    """Interactive chat mode."""
     config = ctx.invoke(cli)
     full_prompt = ' '.join(prompt)
     if not full_prompt:
@@ -53,7 +53,7 @@ def chat(ctx, prompt):
 @click.argument('file_path', type=click.Path(exists=True))
 @click.pass_context
 def review(ctx, file_path):
-    \"\"\"Code review.\"\"\"
+    """Code review."""
     config = ctx.invoke(cli)
     with open(file_path) as f:
         code = f.read()
@@ -70,7 +70,7 @@ def review(ctx, file_path):
 @click.option('--file', 'files', multiple=True, help='Files to edit')
 @click.pass_context
 def agent(ctx, task, files):
-    \"\"\"Agent task completion (Aider-style).\"\"\"
+    """Agent task completion (Aider-style)."""
     config = ctx.invoke(cli)
     prompt = f"Complete task: {task}"
     if files:

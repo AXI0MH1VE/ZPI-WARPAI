@@ -1,4 +1,5 @@
 @echo off
+REM ZPI-WARPAI Setup Script - Run with .\install.bat in PowerShell/CMD
 echo ZPI-WARPAI Setup - Local WarpAI Agent
 echo.
 
